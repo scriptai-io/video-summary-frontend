@@ -1,4 +1,4 @@
-import JS from '@/app/index'
+import JS from '@/app/summary'
 export default function Home() {
 
   return (
