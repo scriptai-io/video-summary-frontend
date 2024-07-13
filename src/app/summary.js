@@ -8,7 +8,7 @@ export default function Home() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const res = await fetch('https://videosummary_project.azurewebsites.net/summarize', {
+        const res = await fetch('https://videosummaryprojects.azurewebsites.net/summarize', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
