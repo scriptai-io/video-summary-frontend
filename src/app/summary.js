@@ -5,14 +5,10 @@ import { useState } from 'react';
 export default function Home() {
     const [url, setUrl] = useState('');
     const [summary, setSummary] = useState('');
-    const [error, setError] = useState('');
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setError('');
-        setSummary('');
-        
-        const res = await fetch('https://videosummaryprojects.azurewebsites.net/summarize', {
+        const res = await fetch('https://videosummaryproject.azurewebsites.net/summarize', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -20,6 +16,7 @@ export default function Home() {
             body: JSON.stringify({ url }),
         });
         const data = await res.json();
+        setSummary(data.summary);
     };
 
     return (
